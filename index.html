@@ -906,5 +906,314 @@ th, td {
     border-bottom: 1px solid #ddd; 
 }
 
+Assignment 2(C)Angular
 
+1.Commands in Terminal
+npm --version
+
+npm install -g @angular/cli@latest
+
+ng new part c
+
+y
+
+css
+
+partc/src =
+>app.component.css
+>app.component.html
+>app.component.ts
+
+cd part c
+
+ng serve
+
+y
+
+2.app.component.css
+
+input{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+button{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+3.app.component.html
+
+<h1>{{title}}</h1>
+
+<input type="text" #name placeholder="Enter Your Name" name="name"> <br>
+
+<input type="text" #address placeholder="Enter Your Address" name="address"> <br>
+
+<input type="text" #contact placeholder="Enter Your Contact" name="contact"> <br>
+
+<input type="email" #email placeholder="Enter Your email" name="email"> <br>
+
+<input type="password" #password placeholder="Enter Your Password" name="password"> <br>
+
+<button (click)="getValue(name.value, address.value, contact.value, email.value)">Register</button>
+
+
+<h1>Your Registered Data</h1> <br>
+<p>Name:{{displayname}}</p>
+<p>Address:{{displayaddress}}</p>
+<p>Contact:{{displaycontact}}</p>
+<p>Email:{{displayemail}}</p>
+
+4.app.component.ts
+
+
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'Registration Form';
+
+  displayname = '';
+  displayaddress = '';
+  displayemail = '';
+  displaycontact = '';
+
+  getValue(name:string, address:string, email:string, contact:string){
+    this.displayname = name;
+    this.displayaddress = address;
+    this.displayemail = email;
+    this.displaycontact = contact;
+  }
+  
+}
+
+Assignment 3(a)Node
+
+1.Commands
+
+
+npm --version
+
+node -- version
+
+npm init -y
+
+npm install express
+
+mkdir public -> index.html
+
+app.js
+
+node app.js
+
+2.index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Static Website</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <h1>Welcome to My Static Website</h1>
+    <script src="script.js"></script> 
+</body>
+</html>
+
+3.app.js
+
+const express = require('express');
+const path = require('path');
+
+const app = express();
+const port = 3000; // Change the port if needed
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Start the server
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+});
+
+Assignment 4 jQuery mobile
+
+1.api.js
+
+// api.js
+
+// Fetch book data based on search query
+function searchBooks(query) {
+    const url = `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(query)}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        // Process the fetched data (e.g., display results on the page)
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }
+
+  // Handle search button click event
+  document.getElementById('searchButton').addEventListener('click', () => {
+    const searchInput = document.getElementById('searchInput');
+    const query = searchInput.value;
+
+    if (query) {
+      searchBooks(query);
+    }
+  });
+
+2.index.html
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KK Wagh Institute of Engineering</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<style>
+  .ui-navbar {
+    background-color: #1eb243;
+    color: #02600d;
+  }
+  .scroll-down {
+    text-align: center;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<div data-role="page" id="home">
+  <div data-role="header" data-position="fixed" data-theme="b">
+    <h1>KK Wagh Institute of Engineering</h1>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home" class="ui-btn-active">Home</a></li>
+        <li><a href="#departments">Departments</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div data-role="content">
+    <h2>Welcome to KK Wagh Institute of Engineering!</h2>
+    <p>Located in Nashik, Maharashtra, KK Wagh Institute of Engineering is a premier engineering institute offering various undergraduate and postgraduate programs in engineering and technology.</p>
+    <h3>About Us</h3>
+    <p>The institute was established in 1984 with a vision to provide quality education and produce skilled engineers.</p>
+    <h3>Facilities</h3>
+    <ul>
+      <li>State-of-the-art laboratories</li>
+      <li>Well-equipped classrooms</li>
+      <li>Library with a vast collection of books</li>
+      <li>Sports facilities</li>
+    </ul>
+    <h3>Admissions</h3>
+    <p>We offer admissions based on entrance exams and merit.</p>
+    <div class="scroll-down">
+      <a href="#departments" data-role="button" data-icon="arrow-d" data-iconpos="right">Scroll Down</a>
+    </div>
+  </div>
+  <div data-role="footer" style="text-align: center" data-theme="b">
+    <h4>KK Wagh Institute of Engineering - Nashik</h4>
+  </div>
+</div>
+
+<div data-role="page" id="departments">
+  <div data-role="header" data-position="fixed" data-theme="b">
+    <h1>Departments</h1>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#departments" class="ui-btn-active">Departments</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div data-role="content">
+    <h2>Departments at KK Wagh Institute of Engineering</h2>
+    <ul data-role="listview" data-inset="true">
+      <li>Computer Science and Engineering</li>
+      <li>Electronics and Telecommunication Engineering</li>
+      <li>Mechanical Engineering</li>
+      <li>Civil Engineering</li>
+      <li>Electrical Engineering</li>
+      <li>Information Technology</li>
+    </ul>
+  </div>
+  <div data-role="footer" style="text-align: center" data-theme="b">
+    <h4>KK Wagh Institute of Engineering - Nashik</h4>
+  </div>
+</div>
+
+<div data-role="page" id="about">
+  <div data-role="header" data-position="fixed" data-theme="b">
+    <h1>About</h1>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#departments">Departments</a></li>
+        <li><a href="#about" class="ui-btn-active">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div data-role="content">
+    <h2>About KK Wagh Institute of Engineering</h2>
+    <p>The KK Wagh Institute of Engineering is committed to providing quality education and fostering a conducive environment for students to develop their skills and knowledge in engineering and technology.</p>
+  </div>
+  <div data-role="footer" style="text-align: center" data-theme="b">
+    <h4>KK Wagh Institute of Engineering - Nashik</h4>
+  </div>
+</div>
+
+<div data-role="page" id="contact">
+  <div data-role="header" data-position="fixed" data-theme="b">
+    <h1>Contact</h1>
+    <div data-role="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#departments">Departments</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="ui-btn-active">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div data-role="content">
+    <h2>Contact KK Wagh Institute of Engineering</h2>
+    <p>Address: ABC Road, Nashik, Maharashtra, India</p>
+    <p>Email: info@kkwagh.edu</p>
+    <p>Phone: +91 1234567890</p>
+  </div>
+  <div data-role="footer" style="text-align: center" data-theme="b">
+    <h4>KK Wagh Institute of Engineering - Nashik</h4>
+  </div>
+</div>
+</body>
+</html>
                
