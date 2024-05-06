@@ -749,35 +749,162 @@
   </body>
 </html>
 <!--    HELLO  WORLD -->
-Admin dashboard: -
-HTML CODE: -
+Assignment 1(B)AJAX
+1.data.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Users</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
 <body>
-    <div class="d-flex" id="wrapper">
-        <!-- Sidebar -->
-        <div class="bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom">Coding School</div>
-            <div class="list-group list-group-flush my-3" style="color: white">
-                <a href="#" style="color: white;"  class="list-group-item list-group-item-action bg-transparent second-text active"><i
-                    class="fas fa-podcast me-2"></i>Dashboard</a>
-                <a href="#" style="color: white;" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="bi bi-house"></i>Home</a>
-                <a href="#" style="color: white;" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="bi bi-house"></i>playlist</a>
-                <a href="#"style="color: white;"  class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="bi bi-house"></i>library</a>
-                <a href="#" style="color: white;" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="bi bi-house"></i>Settings</a>
-                <a href="#" style="color: white;" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-                        class="bi bi-house"></i>Logout</a>
+    <div class="container">
+        <h2>Registered Users</h2>
+        <div id="userList">
             </div>
-        </div>
-        <!-- /#sidebar-wrapper -->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
+    <script src="script.js"></script>
+</body>
+</html>
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper"   style="border: 3px solid yellow; width: 100%;">
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
-                <div class="d-flex align-items-center">
-                    <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
-                    <h2 class="fs-2 m-0">Admin Dashboard</h2>
-                </div>
+2.registration.html
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="container">
+        <h2>User Registration Form</h2>
+        <form id="registrationForm">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone"> 
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
+    <script src="script.js"></script>
+</body>
+</html>
+
+3.script.js
+
+$(document).ready(function() {
+    // Registration Form Submission
+    $('#registrationForm').submit(function(event) {
+        event.preventDefault();
+
+        const name = $('#name').val();
+        const email = $('#email').val();
+        const phone = $('#phone').val();
+
+        const userData = {
+            name: name,
+            email: email,
+            phone: phone
+        };
+
+        // Store data in local storage
+        let registeredUsers = localStorage.getItem('registeredUsers');
+        registeredUsers = registeredUsers ? JSON.parse(registeredUsers) : [];
+        registeredUsers.push(userData);
+        localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
+
+        alert('Registration successful!');
+        window.location.href = 'data.html'; // Redirect to data listing page
+    });
+
+    // Display Registered Users
+    function displayUserList() {
+        const userList = localStorage.getItem('registeredUsers');
+        const usersArray = userList ? JSON.parse(userList) : [];
+
+        let listHTML = '<table><tr><th>Name</th><th>Email</th><th>Phone</th></tr>';
+        usersArray.forEach(user => {
+            listHTML += `<tr><td>${user.name}</td><td>${user.email}</td><td>${user.phone}</td></tr>`;
+        });
+        listHTML += '</table>';
+
+        $('#userList').html(listHTML);
+    }
+
+    displayUserList();
+}); 
+
+4.style.css
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto; /* Center the container */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"] {
+    width: 100%; 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Styling for the User Data Table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    text-align: left; 
+    padding: 8px;
+    border-bottom: 1px solid #ddd; 
+}
+
+
+               
