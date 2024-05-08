@@ -756,100 +756,128 @@ index.html
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    /* Custom CSS for the sidebar */
-    .sidebar {
-      background-color: #343a40;
-      color: #fff;
-    }
-    .sidebar a {
-      color: #fff;
-    }
-    .sidebar-heading {
-      padding: 10px 15px;
-    }
-    /* Custom CSS for the content area */
-    .content {
-      padding: 20px;
-    }
-    /* Custom CSS for the cards */
-    .card {
-      margin-bottom: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKWIEER Admin Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        #sidebar {
+            background-color: #343a40;
+            color: #fff;
+            height: 100vh;
+        }
+
+        #sidebar ul.navbar-nav li.nav-item {
+            padding: 10px 0;
+        }
+
+        #content {
+            padding: 20px;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="d-flex" id="wrapper">
-    <!-- Sidebar -->
-    <div class="bg-dark border-right sidebar" id="sidebar-wrapper">
-      <div class="sidebar-heading">Admin Dashboard</div>
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action bg-dark">Dashboard</a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark">Products</a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark">Orders</a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark">Customers</a>
-      </div>
-    </div>
-    <!-- /#sidebar-wrapper -->
-
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
-        <button class="btn btn-primary" id="menu-toggle">Toggle Sidebar</button>
-      </nav>
-      <div class="container-fluid content">
-        <h1 class="mt-4">Dashboard</h1>
+    <div class="container-fluid">
         <div class="row">
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Total Sales</h5>
-                <p class="card-text">$10,000</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Total Orders</h5>
-                <p class="card-text">100</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">New Customers</h5>
-                <p class="card-text">50</p>
-              </div>
-            </div>
-          </div>
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="navbar-nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Professors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Courses</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4" id="content">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Dashboard</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Students</h5>
+                                <p class="card-text">500</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Professors</h5>
+                                <p class="card-text">50</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Courses</h5>
+                                <p class="card-text">30</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
-      </div>
     </div>
-    <!-- /#page-content-wrapper -->
-  </div>
-  <!-- /#wrapper -->
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-  <!-- Custom script for toggling the sidebar -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
+
 --------------------------------------------------------------------------------------------------------------------
 
 Assignment 1(B)AJAX
