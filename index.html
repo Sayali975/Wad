@@ -749,293 +749,402 @@
   </body>
 </html>
 <!--    HELLO  WORLD -->
-
+---------------------------------------------------------------------------------------------------------------
 Assignment 1(A)Dashboard
 
 index.html
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KKWIEER Admin Dashboard</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Custom styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-
-        #sidebar {
-            background-color: #343a40;
-            color: #fff;
-            height: 100vh;
-        }
-
-        #sidebar ul.navbar-nav li.nav-item {
-            padding: 10px 0;
-        }
-
-        #content {
-            padding: 20px;
-        }
-
-        .card {
-            margin-bottom: 20px;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .card-title {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
-        .card-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: #007bff;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      color: #343a40; /* Text color */
+    }
+    .sidebar {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #343a40;
+      padding-top: 20px;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .card {
+      width: 30%;
+      background-color: #f8f9fa; /* Card background color */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      background-color: #ffffff; /* Table background color */
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #dee2e6;
+    }
+    th {
+      background-color: #343a40;
+      color: #ffffff;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 40px;
+      color: #343a40; /* Text color */
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #343a40; /* Text color */
+      padding: 20px;
+    }
+  </style>
 </head>
-
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar">
-                <div class="sidebar-sticky">
-                    <ul class="navbar-nav flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Students</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Professors</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Courses</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
 
-            <!-- Main content -->
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4" id="content">
-                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Dashboard</h1>
-                </div>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Total Students</h5>
-                                <p class="card-text">500</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Total Professors</h5>
-                                <p class="card-text">50</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Total Courses</h5>
-                                <p class="card-text">30</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-    </div>
+<div class="sidebar">
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Products</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Orders</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Users</a>
+    </li>
+  </ul>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<div class="content">
+  <div class="card">
+    <h5 class="card-title">Total Products</h5>
+    <p class="card-text">500</p>
+  </div>
+  <div class="card">
+    <h5 class="card-title">Total Orders</h5>
+    <p class="card-text">1000</p>
+  </div>
+  <div class="card">
+    <h5 class="card-title">Total Users</h5>
+    <p class="card-text">200</p>
+  </div>
+</div>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Customer Name</th>
+      <th>Product</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>John Doe</td>
+      <td>Product A</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Jane Smith</td>
+      <td>Product B</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Michael Johnson</td>
+      <td>Product C</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
 
 --------------------------------------------------------------------------------------------------------------------
 
 Assignment 1(B)AJAX
-1.data.html
+1.index.html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registered Users</title>
-    <link rel="stylesheet" href="style.css"> 
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 1B</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
     <div class="container">
-        <h2>Registered Users</h2>
-        <div id="userList">
+      <button
+        class="btn btn-outline-success mt-5"
+        data-toggle="modal"
+        data-target="#addNewUser"
+      >
+        Add New User
+      </button>
+      <table class="table table-striped table-bordered my-5">
+        <thead>
+          <tr>
+            <th scope="col">Sr No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">City</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+
+      <div class="modal fade" id="addNewUser">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Enter details</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="email" />
+                </div>
+                <div class="form-group">
+                  <label for="text">Name</label>
+                  <input type="text" class="form-control" id="name" />
+                </div>
+                <div class="form-group">
+                  <label for="text">Username</label>
+                  <input type="text" class="form-control" id="username" />
+                </div>
+                <div class="form-group">
+                  <label for="text">City</label>
+                  <input type="text" class="form-control" id="city" />
+                </div>
+
+                <div class="form-group">
+                  <label for="text">phone</label>
+                  <input type="text" class="form-control" id="phone" />
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" />
+                </div>
+                <button
+                  type="submit"
+                  id="btn"
+                  data-dismiss="modal"
+                  class="btn btn-primary"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
-    <script src="script.js"></script>
-</body>
+
+    <script src="server.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+      integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
 
-2.registration.html
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Registration</title>
-    <link rel="stylesheet" href="style.css"> 
-</head>
-<body>
-    <div class="container">
-        <h2>User Registration Form</h2>
-        <form id="registrationForm">
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="phone">Phone:</label>
-                <input type="text" id="phone" name="phone"> 
-            </div>
-            <button type="submit">Register</button>
-        </form>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> 
-    <script src="script.js"></script>
-</body>
-</html>
+2.server.js
 
-3.script.js
+// let fetchData = () => {
+//     let httprequest = new XMLHttpRequest();
+//     httprequest.open("GET", "https://jsonplaceholder.typicode.com/users");
+//     httprequest.send();
+//     httprequest.onload = () => {
+//       let res = JSON.parse(httprequest.responseText);
+//       console.log(res);
+//       localStorage.setItem("users", JSON.stringify(res));
+//       displayData();
+//     };
+//   };
+  
+//   let displayData = () => {
+//     let tbody = document.getElementById("tbody");
+//     tbody.innerHTML = "";
+//     let storedUser = JSON.parse(localStorage.getItem("users"));
+//     storedUser.map(
+//       (user, index) =>
+//         (tbody.innerHTML += `
+//                   <tr>
+//                       <td>${index + 1}</td>
+//                       <td>${user.name}</td>
+//                       <td>${user.username}</td>
+//                       <td>${user.email}</td>
+//                       <td>${user.phone}</td>
+//                       <td>${user.address.city}</td>
+                     
+//                   </tr>`)
+//     );
+//   };
+//   //initial Data
+//   fetchData();
+  
+//   let btn = document.getElementById("btn");
+//   btn.addEventListener("click", () => {
+//     const email = document.getElementById("email").value;
+//     const username = document.getElementById("username").value;
+//     const password = document.getElementById("password").value;
+//     const name = document.getElementById("name").value;
+//     const city = document.getElementById("city").value;
+  
+//     const phone = document.getElementById("phone").value;
+  
+//     let postObject = {
+//       email,
+//       password,
+//       name,
+//       phone,
+//       username,
+//       address: {
+//         city: city,
+//       },
+//     };
+  
+//     let xhr = new XMLHttpRequest();
+//     xhr.open("POST", "https://jsonplaceholder.typicode.com/users/");
+//     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+//     xhr.send(JSON.stringify(postObject));
+  
+//     xhr.onload = () => {
+//       if (xhr.status == 201) {
+//         let storedUser = JSON.parse(localStorage.getItem("users"));
+//         storedUser.unshift(postObject);
+//         localStorage.setItem("users", JSON.stringify(storedUser));
+//         displayData();
+//       }
+//     };
+//   });
 
-$(document).ready(function() {
-    // Registration Form Submission
-    $('#registrationForm').submit(function(event) {
-        event.preventDefault();
-
-        const name = $('#name').val();
-        const email = $('#email').val();
-        const phone = $('#phone').val();
-
-        const userData = {
-            name: name,
-            email: email,
-            phone: phone
-        };
-
-        // Store data in local storage
-        let registeredUsers = localStorage.getItem('registeredUsers');
-        registeredUsers = registeredUsers ? JSON.parse(registeredUsers) : [];
-        registeredUsers.push(userData);
-        localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
-
-        alert('Registration successful!');
-        window.location.href = 'data.html'; // Redirect to data listing page
-    });
-
-    // Display Registered Users
-    function displayUserList() {
-        const userList = localStorage.getItem('registeredUsers');
-        const usersArray = userList ? JSON.parse(userList) : [];
-
-        let listHTML = '<table><tr><th>Name</th><th>Email</th><th>Phone</th></tr>';
-        usersArray.forEach(user => {
-            listHTML += `<tr><td>${user.name}</td><td>${user.email}</td><td>${user.phone}</td></tr>`;
-        });
-        listHTML += '</table>';
-
-        $('#userList').html(listHTML);
-    }
-
-    displayUserList();
-}); 
-
-4.style.css
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-}
-
-.container {
-    max-width: 600px;
-    margin: 20px auto; /* Center the container */
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input[type="text"], input[type="email"] {
-    width: 100%; 
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-}
-
-button[type="submit"] {
-    background-color: #4CAF50; 
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-/* Styling for the User Data Table */
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 20px;
-}
-
-th, td {
-    text-align: left; 
-    padding: 8px;
-    border-bottom: 1px solid #ddd; 
-}
+let fetchData = () => {
+    let httprequest = new XMLHttpRequest();
+    httprequest.open("GET", "https://jsonplaceholder.typicode.com/users");
+    httprequest.send();
+    httprequest.onload = () => {
+        let res = JSON.parse(httprequest.responseText);
+        console.log(res);
+        localStorage.setItem("users", JSON.stringify(res));
+        displayData();
+    };
+  };
+  
+  let displayData = () => {
+    let tbody = document.getElementById("tbody");
+    tbody.innerHTML = "";
+    let storedUser = JSON.parse(localStorage.getItem("users"));
+    storedUser.map((user, index) => tbody.innerHTML += `
+        <tr>
+            <td>${index + 1}</td>
+            <td>${user.name}</td>
+            <td>${user.username}</td>
+            <td>${user.email}</td>
+            <td>${user.phone}</td>
+            <td>${user.address.city}</td>
+        </tr>`
+    );
+  };
+  
+  // Initial Data
+  fetchData();
+  
+  let btn = document.getElementById("btn");
+  btn.addEventListener("click", () => {
+    const email = document.getElementById("email").value;
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const name = document.getElementById("name").value;
+    const city = document.getElementById("city").value;
+    const phone = document.getElementById("phone").value;
+  
+    let postObject = {
+        email,
+        password,
+        name,
+        phone,
+        username,
+        address: {
+            city: city,
+        },
+    };
+  
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://jsonplaceholder.typicode.com/users/");
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    xhr.send(JSON.stringify(postObject));
+  
+    xhr.onload = () => {
+        if (xhr.status == 201) {
+            let storedUser = JSON.parse(localStorage.getItem("users"));
+            storedUser.unshift(postObject);
+            localStorage.setItem("users", JSON.stringify(storedUser));
+            displayData();
+        }
+    };
+  });
+  
 ---------------------------------------------------------------------------------------------------------------
 Assignment 1(B)AJAX
 
